@@ -34,7 +34,15 @@ announcements= Announcment.Announcment(rq).getAllForSite("ede5e4b7-9cf2-4eea-8dd
 print announcements["announcement_collection"]
 ```
 
+* authInfo is a dict containing the URL of the login page. This code will change to also take in the ID name of the login form.
+* Username is your username
+* Password is your password
 
+* RequestGenerator is the class that handles the authentication and REST requests.
+
+* You would then define an instance of the tool you wish to use and execute the query.
+
+As of now, it returns to you the JSON representation of the data.
 
 
 
