@@ -8,7 +8,7 @@ setup(name='SakaiPy',
       license='MIT',
       author='William Karavites',
       author_email='wkaravites@gmail.com',
-      url='https://www.python.org/sigs/distutils-sig/',
+      url='https://github.com/willkara/SakaiPy',
       packages=['SakaiTools'],
       requires={
       		"mechanize",
