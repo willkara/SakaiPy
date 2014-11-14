@@ -14,7 +14,6 @@ setup(name='SakaiPy',
       		"mechanize",
       		"cookielib",
       		"requests",
-      		"simplejson",
-                  "google-api-python-client"}
+      		"simplejson"}
      )
 			
