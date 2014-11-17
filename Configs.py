@@ -1,1 +1,1 @@
-baseURL="sakai.rutgers.edu"
+baseURL="https://sakai.rutgers.edu"
