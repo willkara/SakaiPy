@@ -8,14 +8,14 @@ class Calendar(object):
     def __init__(self, rq):
         self.requester = rq
 
-        def getCalendarForSite(self, siteid):
-            return self.requester.executeRequest('/direct/calendar/site/{0}.json'.format(siteid))
+    def getCalendarForSite(self, siteid):
+        return self.requester.executeRequest('/direct/calendar/site/{0}.json'.format(siteid))
 
-        def getAllMyEvents(self):
-            return self.requester.executeRequest('/direct/calendar/my.json')
+    def getAllMyEvents(self):
+        return self.requester.executeRequest('/direct/calendar/my.json')
 
-        def getEventDetails(self, siteid, eventid):
-            return self.requester.executeRequest('/direct/calendar/event/{0}/{1}.json'.format(siteid,eventid))
+    def getEventDetails(self, siteid, eventid):
+        return self.requester.executeRequest('/direct/calendar/event/{0}/{1}.json'.format(siteid,eventid))
 
 
 
