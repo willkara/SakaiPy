@@ -6,12 +6,16 @@ A library to access the information located on Sakai installations.
 I made this library so people can access the Sakai information at their schools (I'm @ Rutgers).
 
 ### TO-DO
-
+* Get the damn setup.py install script to work correctly.
 * Have the ability to specify the login form id for mechanize.
 * Add events to Google Calendar
 * Finish adding tools
 
 ### Example
+
+Once I get the setup.py script to work correctly you should be able to do:
+
+from SakaiPy import SakaiPy, SakaiTools
 
 A quick example of its usage can be seen below. Here, I am create a dict() that contains some of the neccasary auth info and pass that to an instance of RequestGenerator which handles the actual requests. Depending on the tool you'll be using you then create an instance of that tool, pass the Request Generator and then use the method you wish.
 
