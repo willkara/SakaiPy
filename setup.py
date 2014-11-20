@@ -9,7 +9,7 @@ setup(name='SakaiPy',
       author='William Karavites',
       author_email='wkaravites@gmail.com',
       url='https://github.com/willkara/SakaiPy',
-      packages=['SakaiPy'],
+      packages=['SakaiPy','SakaiPy/SakaiTools'],
       requires={
       		"mechanize",
       		"cookielib",
