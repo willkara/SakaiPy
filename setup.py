@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='SakaiPy',
-      version='1.0',
+      version='1.0.1',
       description='Python interface to the Sakai RESTful API\'s',
       license='MIT',
       author='William Karavites',
@@ -12,7 +12,6 @@ setup(name='SakaiPy',
       packages=['SakaiPy','SakaiPy.SakaiTools'],
       install_requires={
       		"mechanize",
-      		"cookielib",
       		"requests",
       		"simplejson"},
       classifiers=[
