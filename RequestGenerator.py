@@ -3,7 +3,6 @@
 import mechanize
 import cookielib
 import requests
-import Configs
 
 try:
     import simplejson as json
@@ -13,6 +12,8 @@ except ImportError:
 br = mechanize.Browser()
 
 cj = cookielib.LWPCookieJar()
+
+baseURL=""
 
 
 class RequestGenerator(object):
@@ -24,6 +25,7 @@ class RequestGenerator(object):
 
     def __init__(self, connectionInfo):
         wPage = br.open(connectionInfo['loginURL'])
+        self.baseURL=connectionInfo['baseURL']
 
         html = wPage.read()
         br.select_form(nr=0)
@@ -35,7 +37,7 @@ class RequestGenerator(object):
     def executeRequest(self, url):
         """Returns the JSON response from the specified URL."""
 
-        response = requests.get(Configs.baseURL+url, cookies=cj)
+        response = requests.get(self.baseURL+url, cookies=cj)
 
         if response.status_code == 200:
             return json.loads(response.content)

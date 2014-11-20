@@ -1,1 +1,0 @@
-baseURL="https://sakai.rutgers.edu"
