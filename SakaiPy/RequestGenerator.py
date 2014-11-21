@@ -27,11 +27,17 @@ class RequestGenerator(object):
         wPage = br.open(connectionInfo['loginURL'])
         self.baseURL=connectionInfo['baseURL']
 
-        html = wPage.read()
-        br.select_form(nr=0)
+        fCount=0
 
-        br.form['username'] = connectionInfo['username']
-        br.form['password'] = connectionInfo['password']
+        for form in br.forms():
+            if str(form.attrs["id"])==connectionInfo["loginFormId"]:
+                break;
+            fCount = fCount+1
+
+        br.select_form(nr=fCount)
+
+        br.form[connectionInfo['usernameField']] = connectionInfo['username']
+        br.form[connectionInfo['passwordField']] = connectionInfo['password']
         br.submit()
 
     def executeRequest(self, url):
