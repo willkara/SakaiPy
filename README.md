@@ -7,7 +7,9 @@ I made this library so people can access the Sakai information at their schools 
 
 It's finally up on PyPi so you can install it with:
 
-   pip install SakaiPy
+```
+pip install SakaiPy
+```
 
 ### TO-DO
 * Get the damn setup.py install script to work correctly.
