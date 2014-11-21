@@ -26,6 +26,11 @@ from SakaiPy.SakaiTools import Calendar
 
 authInfo={}
 authInfo['baseURL']="https://sakai.rutgers.edu"
+
+authInfo['loginFormId']='fm1'
+authInfo['usernameField']='username'
+authInfo['passwordField']='password'
+
 authInfo['loginURL']="https://cas.rutgers.edu/login?service=https%3A%2F%2Fsakai.rutgers.edu%2Fsakai-login-tool%2Fcontainer"
 authInfo['username']="Shepppppurd"
 authInfo['password']="Bosh'tet"
@@ -36,10 +41,17 @@ Calendars= Calendar.Calendar(rq).getAllMyEvents()
 print Calendars["calendar_collection"]
 ```
 
-* authInfo is a dict containing the URL of the login page. This code will change to also take in the ID name of the login form.
-* baseURL is the baseic FQDN of your school's Sakai installation
-* Username is your username
-* Password is your password
+* **authInfo** A dict containing the URL of the login page. This code will change to also take in the ID name of the login form.
+
+* **baseURL**  The  FQDN of your school's Sakai installation.
+* **loginURL** - The url of the page where your login form is located at.
+
+* **loginFormId** The HTML id of the login form on the login page.
+* **usernameField** The id of the username field for the login form.
+* **passwordField** The id of the password field for the login form.
+
+* **username** Your username.
+* **password** Your password.
 
 * import SakaiPy.RequestGenerator is the class that handles the authentication and REST requests.
 
@@ -47,6 +59,7 @@ print Calendars["calendar_collection"]
 
 As of now, it returns to you the JSON representation of the data.
 
+FYI, **ALL** of the data,endpoints and documentation can be found @ 
 
 
 BTW: In no way,shape,form or Universe does Rutgers University endorse or have anything to do with this library. I made it myself.
