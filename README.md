@@ -5,6 +5,10 @@ A library to access the information located on Sakai installations.
 
 I made this library so people can access the Sakai information at their schools (I'm @ Rutgers).
 
+It's finally up on PyPi so you can install it with:
+
+   pip install SakaiPy
+
 ### TO-DO
 * Get the damn setup.py install script to work correctly.
 * Have the ability to specify the login form id for mechanize.
