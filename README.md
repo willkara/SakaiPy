@@ -3,6 +3,8 @@ SakaiPy
 
 A library to access the information located on Sakai installations.
 
+SakaiPy currently only works with Python 2.x (2.7) since mechanize does not work on 3.x yet. If anyone knows of a 3.x tool that can take mechanizes place, please feel free to develop that feature.
+
 I made this library so people can access the Sakai information at their schools (I'm @ Rutgers).
 
 It's finally up on PyPi so you can install it with:
