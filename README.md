@@ -65,7 +65,7 @@ print Calendars["calendar_collection"]
 
 As of now, it returns to you the JSON representation of the data.
 
-FYI, **ALL** of the data,endpoints and documentation can be found @ 
+FYI, **ALL** of the data,endpoints and documentation can be found @ https://sakai.rutgers.edu/direct/describe
 
 
 BTW: In no way,shape,form or Universe does Rutgers University endorse or have anything to do with this library. I made it myself.
