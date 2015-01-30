@@ -14,7 +14,6 @@ pip install SakaiPy
 ```
 
 ### TO-DO
-* Have the ability to specify the login form id for mechanize.
 * Add events to Google Calendar
 * Finish adding tools
 * HTTP Code error handling- If something breaks return a code.
@@ -52,7 +51,7 @@ print Calendars["calendar_collection"]
 * **authInfo** A dict containing the URL of the login page. This code will change to also take in the ID name of the login form.
 
 * **baseURL**  The  FQDN of your school's Sakai installation.
-* **loginURL** - The url of the page where your login form is located at.
+* **loginURL** - The url of the page where your login form is located at. This could be the homepage for the Sakai Installation or where the CAS/LDAP form is located.
 
 * **loginFormId** The HTML id of the login form on the login page.
 * **usernameField** The id of the username field for the login form.
@@ -67,7 +66,10 @@ print Calendars["calendar_collection"]
 
 As of now, it returns to you the JSON representation of the data.
 
-FYI, **ALL** of the data,endpoints and documentation can be found @ https://sakai.rutgers.edu/direct/describe
+### Sakai Documentation
+
+**ALL** of the data,endpoints and documentation can be found @ <<Sakai Installation URL>>/direct/describe. 
 
 
-BTW: In no way,shape,form or Universe does Rutgers University endorse or have anything to do with this library. I made it myself.
+
+BTW: In no way,shape,form or Universe does Rutgers University endorse or have anything to do with this library. I made it myself. This library also does not speak for the Sakai Community Project either.
