@@ -17,7 +17,7 @@ baseURL=""
 
 
 class RequestGenerator(object):
-    """This class will handle generating the neccasary requests and cookie generation"""
+    """This class handles the login/cookie mechanisms and request generation."""
 
     # Browser
 
@@ -38,6 +38,7 @@ class RequestGenerator(object):
 
         br.form[connectionInfo['usernameField']] = connectionInfo['username']
         br.form[connectionInfo['passwordField']] = connectionInfo['password']
+
         br.submit()
 
     def executeRequest(self, url):
@@ -45,10 +46,15 @@ class RequestGenerator(object):
 
         response = requests.get(self.baseURL+url, cookies=cj)
 
+        """If it is a good response, then return the content in json form for the Sakai Object.
+           If it is a bad response, raise an exception.
+        """
         if response.status_code == 200:
-            return json.loads(response.content)
+            return (response.json())
         else:
-            return 'SHIT BROKE'
+            response.raise_for_status()
+
+
 
 
 
