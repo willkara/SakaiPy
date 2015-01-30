@@ -9,6 +9,7 @@ SakaiPy/SakaiTools/BaseTool.py
 SakaiPy/SakaiTools/Calendar.py
 SakaiPy/SakaiTools/ContentResource.py
 SakaiPy/SakaiTools/Forums.py
+SakaiPy/SakaiTools/Gradebook.py
 SakaiPy/SakaiTools/News.py
 SakaiPy/SakaiTools/Roster.py
 SakaiPy/SakaiTools/WebContent.py
