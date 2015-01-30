@@ -1,5 +1,8 @@
 #Changes Log
 
+###1.2.0
+ * Implemented some HTTP error checking for the requtests. Still need to implement some sort of error checking for the login portion.
+
 ###1.1.1
  * Only works in 2.7 currently. Mechanize does not yet support 3.x
 
