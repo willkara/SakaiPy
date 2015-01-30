@@ -13,6 +13,8 @@ It's finally up on PyPi so you can install it with:
 pip install SakaiPy
 ```
 
+I'll usually make a blog post about each new version at my website. http://willkara.com
+
 ### TO-DO
 * Add events to Google Calendar
 * Finish adding tools
