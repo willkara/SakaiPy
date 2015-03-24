@@ -3,11 +3,13 @@ SakaiPy
 
 A library to access the information located on Sakai installations.
 
-SakaiPy currently only works with Python 2.x (2.7) since mechanize does not work on 3.x yet. If anyone knows of a 3.x tool that can take mechanizes place, please feel free to develop that feature.
+SakaiPy used to only work with Python 2.7, though now it works with Python 2.5> & Python 3.x. I have now re-wrote it so that it no longer has a dependency on the mechanize library which did not work on Python 3 yet. 
 
-I made this library so people can access the Sakai information at their schools (I'm @ Rutgers).
+I'm mainly a Java developer so anyone with more Python experience is more than welcome to make a pull request to clean it up!
 
-It's finally up on PyPi so you can install it with:
+I made this library so people can access the Sakai information at their schools (I'm @ Rutgers) more easily through Python.
+
+You can install SakaiPy with pip by typing in the following command:
 
 ```
 pip install SakaiPy
@@ -17,8 +19,8 @@ I'll usually make a blog post about each new version at my website. http://willk
 
 ### TO-DO
 * Add events to Google Calendar
-* Finish adding tools
-* HTTP Code error handling- If something breaks return a code.
+* Add more Sakai tools and more functionality for each tool.
+* Better HTTP Code error handling- If something breaks return a code.
 
 ### Example
 
@@ -36,28 +38,19 @@ from SakaiPy.SakaiTools import Calendar
 authInfo={}
 authInfo['baseURL']="https://sakai.rutgers.edu"
 
-authInfo['loginFormId']='fm1'
-authInfo['usernameField']='username'
-authInfo['passwordField']='password'
-
-authInfo['loginURL']="https://cas.rutgers.edu/login?service=https%3A%2F%2Fsakai.rutgers.edu%2Fsakai-login-tool%2Fcontainer"
 authInfo['username']="Shepppppurd"
 authInfo['password']="Bosh'tet"
 
 rq = RequestGenerator.RequestGenerator(authInfo)
 
+#Get all of your events within Calendar.
 Calendars= Calendar.Calendar(rq).getAllMyEvents()
 print Calendars["calendar_collection"]
 ```
 
-* **authInfo** A dict containing the URL of the login page. This code will change to also take in the ID name of the login form.
+* **authInfo** A dict containing some of the neccasary information to login to your Sakai system.
 
-* **baseURL**  The  FQDN of your school's Sakai installation.
-* **loginURL** - The url of the page where your login form is located at. This could be the homepage for the Sakai Installation or where the CAS/LDAP form is located.
-
-* **loginFormId** The HTML id of the login form on the login page.
-* **usernameField** The id of the username field for the login form.
-* **passwordField** The id of the password field for the login form.
+* **baseURL**  The FQDN of your school's Sakai installation.
 
 * **username** Your username.
 * **password** Your password.

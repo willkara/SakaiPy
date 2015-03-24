@@ -1,4 +1,9 @@
-#Changes Log
+#Change Log
+
+###2.0.0
+ * Should work with Python3.x correctly.
+ * No longer uses mechanize for web-scraping/login form.
+ * Uses the /session REST api for session cookies.
 
 ###1.2.0
  * Implemented some HTTP error checking for the requtests. Still need to implement some sort of error checking for the login portion.

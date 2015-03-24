@@ -1,50 +1,29 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import mechanize
-import cookielib
+from __future__ import absolute_import
 import requests
 
-try:
-    import simplejson as json
-except ImportError:
-    import json
-
-br = mechanize.Browser()
-
-cj = cookielib.LWPCookieJar()
 
 baseURL=""
+loginURL="/direct/session?_username={0}&_password={1}"
 
+session = requests.Session()
 
 class RequestGenerator(object):
     """This class handles the login/cookie mechanisms and request generation."""
 
-    # Browser
-
-    br.set_cookiejar(cj)
-
     def __init__(self, connectionInfo):
-        wPage = br.open(connectionInfo['loginURL'])
+        """Simply generate the session cookie"""
+
         self.baseURL=connectionInfo['baseURL']
 
-        fCount=0
-
-        for form in br.forms():
-            if str(form.attrs["id"])==connectionInfo["loginFormId"]:
-                break;
-            fCount = fCount+1
-
-        br.select_form(nr=fCount)
-
-        br.form[connectionInfo['usernameField']] = connectionInfo['username']
-        br.form[connectionInfo['passwordField']] = connectionInfo['password']
-
-        br.submit()
+        #Generate a session cookie & store it in the requesting session
+        session.post(self.baseURL+loginURL.format(connectionInfo['username'],connectionInfo['password']))
 
     def executeRequest(self, url):
         """Returns the JSON response from the specified URL."""
 
-        response = requests.get(self.baseURL+url, cookies=cj)
+        response = session.get(self.baseURL+url)
 
         """If it is a good response, then return the content in json form for the Sakai Object.
            If it is a bad response, raise an exception.
@@ -58,4 +37,4 @@ class RequestGenerator(object):
 
 
 
-			
+            

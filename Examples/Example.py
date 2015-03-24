@@ -8,15 +8,10 @@ from SakaiPy.SakaiTools import Calendar
 authInfo={}
 authInfo['baseURL']="https://sakai.rutgers.edu"
 
-authInfo['loginFormId']='fm1'
-authInfo['usernameField']='username'
-authInfo['passwordField']='password'
-
-authInfo['loginURL']="https://cas.rutgers.edu/login?service=https%3A%2F%2Fsakai.rutgers.edu%2Fsakai-login-tool%2Fcontainer"
 authInfo['username']="Shepppppurd"
 authInfo['password']="Bosh'tet"
 
 rq = RequestGenerator.RequestGenerator(authInfo)
 
 Calendars= Calendar.Calendar(rq).getAllMyEvents()
-print Calendars["calendar_collection"]
+print (Calendars)
