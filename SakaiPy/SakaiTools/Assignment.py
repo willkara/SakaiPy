@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import SakaiPy.RequestGenerator
+import SakaiPy.RequestHanlder
 
 
 
