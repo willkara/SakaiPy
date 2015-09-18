@@ -7,7 +7,7 @@ SakaiPy used to only work with Python 2.7, though now it works with Python 2.5> 
 
 I'm mainly a Java developer so anyone with more Python experience is more than welcome to make a pull request to clean it up!
 
-I made this library so people can access the Sakai information at their schools (I'm @ Rutgers) more easily through Python. This l
+I made this library so people can access the Sakai information at their schools (I'm @ Rutgers) more easily through Python.
 
 You can install SakaiPy with pip by typing in the following command:
 
