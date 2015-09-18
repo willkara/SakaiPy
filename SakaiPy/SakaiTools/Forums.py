@@ -9,6 +9,7 @@ class Forums(object):
     More information about the RESTful interface can be found at:
     https://sakai.rutgers.edu/direct/forums/describe
     """
+
     def __init__(self, rq):
         """
         Create a standalone Forums Object

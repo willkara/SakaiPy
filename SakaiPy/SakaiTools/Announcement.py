@@ -9,6 +9,7 @@ class Announcement(object):
     More information about the RESTful interface can be found at:
     https://sakai.rutgers.edu/direct/announcement/describe
     """
+
     def __init__(self, rq):
         """
         Create a standalone Announcement Object

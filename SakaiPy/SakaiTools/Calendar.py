@@ -9,6 +9,7 @@ class Calendar(object):
     More information about the RESTful interface can be found at:
     https://sakai.rutgers.edu/direct/calendar/describe
     """
+
     def __init__(self, rq):
         """
         Create a standalone Calendar Object

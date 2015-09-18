@@ -9,6 +9,7 @@ class Assignment(object):
     More information about the RESTful interface can be found at:
     https://sakai.rutgers.edu/direct/assignment/describe
     """
+
     def __init__(self, rq):
         """
         Create a standalone Assignment Object.

@@ -9,6 +9,7 @@ class WebContent(object):
     More information about the RESTful interface can be found at:
     https://sakai.rutgers.edu/webcontent/news/describe
     """
+
     def __init__(self, rq):
         """
         Create a standalone WebContent Object
