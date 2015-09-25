@@ -1,9 +1,9 @@
 SakaiPy
 =======
 
-A library to access the information located on Sakai installations. This can be thought more of a 'pretty wrapper' around the REST interface that Sakai gives you.
+# SakaiPy currently doesn't work. The login mechanism behind Sakai has changed and I'm in the process of getting it working.
 
-SakaiPy used to only work with Python 2.7, though now it works with Python 2.5> & Python 3.x. I have now re-wrote it so that it no longer has a dependency on the mechanize library which did not work on Python 3 yet. 
+A library to access the information located on Sakai installations. This can be thought more of a 'pretty wrapper' around the REST interface that Sakai gives you.
 
 I'm mainly a Java developer so anyone with more Python experience is more than welcome to make a pull request to clean it up!
 
