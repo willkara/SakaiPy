@@ -1,7 +1,7 @@
 SakaiPy
 =======
 
-# SakaiPy currently doesn't work. The login mechanism behind Sakai has changed and I'm in the process of getting it working.
+# SakaiPy currently doesn't work for Sakai 10.X+. The login mechanism behind Sakai has changed and I'm in the process of getting it working.
 
 A library to access the information located on Sakai installations. This can be thought more of a 'pretty wrapper' around the REST interface that Sakai gives you.
 
