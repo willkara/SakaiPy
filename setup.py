@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+from setuptools import setup
 
 setup(name='SakaiPy',
-      version='2.2.0',
+      version='2.2.1',
       description='Python interface to the Sakai RESTful API\'s',
       license='MIT',
       author='William Karavites',
@@ -11,6 +11,7 @@ setup(name='SakaiPy',
       url='https://github.com/willkara/SakaiPy',
       download_url = 'https://github.com/willkara/SakaiPy/archive/2.2.0.tar.gz',
       packages=['SakaiPy', 'SakaiPy.SakaiTools'],
+      install_requires=['requests'],
       classifiers=[
           'Development Status :: 5 - Production/Stable',
           'Intended Audience :: Developers',
@@ -33,5 +34,5 @@ setup(name='SakaiPy',
           'Programming Language :: Python :: 3.4',
           'Programming Language :: Python :: 3.5'
       ],
-      keywords='Sakai Education RESTful API', requires=['requests']
+      keywords='Sakai Education RESTful API'
       )
