@@ -1,8 +1,6 @@
 SakaiPy
 =======
 
-# SakaiPy currently doesn't work for Sakai 10.X+. The login mechanism behind Sakai has changed and I'm in the process of getting it working.
-
 A library to access the information located on Sakai installations. This can be thought more of a 'pretty wrapper' around the REST interface that Sakai gives you.
 
 I'm mainly a Java developer so anyone with more Python experience is more than welcome to make a pull request to clean it up!
@@ -15,16 +13,16 @@ You can install SakaiPy with pip by typing in the following command:
 pip install SakaiPy
 ```
 
-I'll usually make a blog post about each new version at my website. http://willkara.com
+I'll usually make a blog post about each new version at my website. https://blog.willkara.com
 
 ### TO-DO
-* Add events to Google Calendar
+* Integrate services available under Sakai's WebServices directory.
+* Add events to Google Calendar.
 * Add more Sakai tools and more functionality for each tool.
-* Better HTTP Code error handling- If something breaks return a code.
+* Better HTTP Code error handling- If something breaks return a code, or a reason depending on how Sakai handles the error.
 
 ### Example
 
-With the changes of how Sakai handles logins and a rewrite of the architecture I've had to get rid of the examples. Of course I'll post all the info once I have everything figured out.
 
 ### Sakai Documentation
 

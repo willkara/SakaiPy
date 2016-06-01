@@ -1,13 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import requests
-
-from SakaiPy import RequestHandler
-from SakaiPy.SakaiTools import SakaiSite, Announcement, Assignment, Calendar, Content, Forums, Gradebook, News
-
-loginURL = "/direct/session?_username={0}&_password={1}"
-
-session = requests.Session()
+from SakaiPy import SakaiSession
+from SakaiPy import SakaiTools
 
 
 class SakaiPy(object):
@@ -17,75 +11,61 @@ class SakaiPy(object):
 
     def __init__(self, connectioninfo):
         """
-        Create the main SakaiPy object. All logic for the program flows through this object
-        :param connectioninfo: A dict containin the connection/credential information neccsary to authenticate the user.
-        :return: A SakaiPy object
+        Create the main SakaiPy object. This object will be the main interface point.
+        :param connectioninfo: A dict containing all of the needed information to create a session.
         """
 
-        """Generate the session cookie"""
-        self.baseURL = connectioninfo['baseURL']
+        self.session = SakaiSession.SakaiSession(connectioninfo['username'], connectioninfo['password'],
+                                                 connectioninfo['baseurl'])
 
-        # Generate a session cookie & store it in the requesting session
-        session.post(self.baseURL + loginURL.format(
-            connectioninfo['username'],
-            connectioninfo['password']
-        ))
+    def get_calendar(self):
+        """
+        Get a calendar object
+        :return:
+        """
+        return SakaiTools.Calendar.Calendar(self.session)
 
-        self.requester = RequestHandler.RequestHandler(session, self.baseURL)
+    def get_announcement(self):
+        """
+        Get an Announcements object
+        :return:
+        """
+        return SakaiTools.Announcement.Announcement(self.session)
 
-    def getSakaiSite(self, siteid):
+    def get_assignment(self):
         """
-        Generate and return a SakaiSite object
-        :param siteid: The id of the site.
-        :return: A SakaiSite object
+        Get an Assignments object
+        :return:
         """
-        return SakaiSite.SakaiSite(self.requester, siteid)
+        return SakaiTools.Assignment.Assignment(self.session)
 
-    def getAnnouncementObject(self):
+    def get_forums(self):
         """
-        Generate and return an Announcement object for the current user.
-        :return: An announcement object for the currently logged in user.
+        Get a forums object
+        :return:
         """
-        return Announcement.Announcement(self.requester)
+        return SakaiTools.Forums.Forums(self.session)
 
-    def getAssignmentObject(self):
-        """
-        Generate and return an Assignment object for the current user.
-        :return: An assignment object for the currently logged in user.
-        """
-        return Assignment.Assignment(self.requester)
+    def get_gradebook(self):
+        pass
 
-    def getCalendarObject(self):
+    def get_workspace(self):
         """
-        Generate and return a Calendar object for the current user.
-        :return: A calendar object for the currently logged in user.
+        Get a MyWorkspace object
+        :return:
         """
-        return Calendar.Calendar(self.requester)
+        return SakaiTools.MyWorkspace.MyWorkspace(self.session)
 
-    def getContentObject(self):
+    def get_news(self):
         """
-        Generate and return a Content object for the current user.
-        :return: A content object for the currently logged in user.
+        Get a news object
+        :return:
         """
-        return Content.Content(self.requester)
+        return SakaiTools.News.News(self.session)
 
-    def getForumsObject(self):
+    def get_webcontent(self):
         """
-        Generate and return a Forums object for the current user.
-        :return: A Forums object for the currently logged in user.
+        Get a web content object
+        :return:
         """
-        return Forums.Forums(self.requester)
-
-    def getGradebookObject(self):
-        """
-        Generate and return a Gradebook object for the current user.
-        :return: A Gradebook object for the currently logged in user.
-        """
-        return Gradebook.Gradebook(self.requester)
-
-    def getNewsObject(self):
-        """
-        Generate and return a News object for the current user.
-        :return: A News object for the currently logged in user.
-        """
-        return News.News(self.requester)
+        return SakaiTools.WebContent.WebContent(self.session)

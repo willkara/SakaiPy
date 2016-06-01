@@ -3,14 +3,13 @@
 from distutils.core import setup
 
 setup(name='SakaiPy',
-      version='2.1.0',
+      version='2.2.0',
       description='Python interface to the Sakai RESTful API\'s',
       license='MIT',
       author='William Karavites',
       author_email='wkaravites@gmail.com',
       url='https://github.com/willkara/SakaiPy',
       packages=['SakaiPy', 'SakaiPy.SakaiTools'],
-      install_requires={"requests,urllib"},
       classifiers=[
           'Development Status :: 5 - Production/Stable',
           'Intended Audience :: Developers',
@@ -30,7 +29,8 @@ setup(name='SakaiPy',
           'Programming Language :: Python :: 3.1',
           'Programming Language :: Python :: 3.2',
           'Programming Language :: Python :: 3.3',
-          'Programming Language :: Python :: 3.4'
+          'Programming Language :: Python :: 3.4',
+          'Programming Language :: Python :: 3.5'
       ],
       keywords='Sakai Education RESTful API', requires=['requests']
       )

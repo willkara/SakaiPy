@@ -1,6 +1,11 @@
 # Change Log
 
-#Currently doesn't work due to a change in the way Sakai handles sessions.
+### 2.2.0
+
+SakaiPy works again! I was able to find a more stable way of creating sessions! Now I'll be able to base all future work off of a stable platform.
+
+ * New way to handle session generation.
+ * Architecture re-write to work with new session generation.
 
 ### 2.1.0
 

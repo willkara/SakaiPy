@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from SakaiPy import SakaiSession
 
 
 class News(object):
@@ -7,16 +8,17 @@ class News(object):
     Contains logic for the Sakai News tool.
 
     More information about the RESTful interface can be found at:
-    https://sakai.rutgers.edu/direct/news/describe
+    https://trunk-mysql.nightly.sakaiproject.org/direct/news/describe
     """
 
-    def __init__(self, rq):
+    def __init__(self, sess):
         """
         Create a standalone News Object
-        :param rq: The RequestHandler to use.
+        :param sess: The Session to use.
         :return: A News object
         """
-        self.requester = rq
+        assert isinstance(sess, SakaiSession.SakaiSession)
+        self.session = sess
 
     def getNewsForSite(self, siteid):
         """
@@ -24,4 +26,4 @@ class News(object):
         :param siteid: The ID of the site.
         :return: A JSON representation of the News object for the given site.
         """
-        return self.requester.executeRequest('/direct/news/site/{0}.json'.format(siteid))
+        return self.session.executeRequest(self.session.baseurl, 'GET', '/news/site/{0}.json'.format(siteid))

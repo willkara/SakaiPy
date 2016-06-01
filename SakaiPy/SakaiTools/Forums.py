@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from SakaiPy import SakaiSession
 
 
 class Forums(object):
@@ -7,16 +8,17 @@ class Forums(object):
     Contains logic for the Sakai Forums tool.
 
     More information about the RESTful interface can be found at:
-    https://sakai.rutgers.edu/direct/forums/describe
+    https://trunk-mysql.nightly.sakaiproject.org/direct/forums/describe
     """
 
-    def __init__(self, rq):
+    def __init__(self, sess):
         """
         Create a standalone Forums Object
-        :param rq: The RequestHandler to use.
+        :param sess: The Session to use.
         :return: A Forums object
         """
-        self.requester = rq
+        assert isinstance(sess, SakaiSession.SakaiSession)
+        self.session = sess
 
     def getForumsForSite(self, siteid):
         """
@@ -24,7 +26,7 @@ class Forums(object):
         :param siteid: The ID of the site.
         :return: A JSON representation of the forums for the specified site.
         """
-        return self.requester.executeRequest('/direct/forums/site/{0}.json'.format(siteid))
+        return self.session.executeRequest('GET', '/forums/site/{0}.json'.format(siteid))
 
     def getAllTopicsForForum(self, siteid, forumid):
         """
@@ -33,8 +35,8 @@ class Forums(object):
         :param forumid: The ID of the forum.
         :return: A JSON representation of the topics for the given forum within the given site.
         """
-        return self.requester.executeRequest('/direct/forums/site/{0}/forum/{1}.json'.format(siteid,
-                                                                                             forumid))
+        return self.session.executeRequest('GET', '/forums/site/{0}/forum/{1}.json'.format(siteid,
+                                                                                           forumid))
 
     def getAllConversationsForTopic(
             self,
@@ -46,12 +48,12 @@ class Forums(object):
         Get all of the conversations for the given topic within the given topic.
         :param siteid: The ID of the site.
         :param forumid: The ID of the forum.
-        :param topicid: the ID of the topic
-        :return: A JSON representation of the conversations for the given topic within the given forum in the given site.
+        :param topicid: the ID of the topic.
+        :return: JSON representation of the conversations for the given topic within the given forum in the given site.
         """
-        return self.requester.executeRequest('/direct/forums/site/{0}/forum/{1}/topic/{2}.json'.format(siteid,
-                                                                                                       forumid,
-                                                                                                       topicid))
+        return self.session.executeRequest('GET', '/forums/site/{0}/forum/{1}/topic/{2}.json'.format(siteid,
+                                                                                                     forumid,
+                                                                                                     topicid))
 
     def getAllMessagesForConversation(
             self,
@@ -68,6 +70,8 @@ class Forums(object):
         :param messageid: The ID of the conversation.
         :return: You get the idea....
         """
-        return self.requester.executeRequest(
-            '/direct/forums/site/{0}/forum/{1}/topic/{2}/message/{3}.json'.format(siteid,
-                                                                                  forumid, topicid, messageid))
+        return self.session.executeRequest('GET',
+                                           '/forums/site/{0}/forum/{1}/topic/{2}/message/{3}.json'.format(siteid,
+                                                                                                          forumid,
+                                                                                                          topicid,
+                                                                                                          messageid))
