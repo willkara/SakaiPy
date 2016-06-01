@@ -9,6 +9,7 @@ setup(name='SakaiPy',
       author='William Karavites',
       author_email='wkaravites@gmail.com',
       url='https://github.com/willkara/SakaiPy',
+      download_url = 'https://github.com/willkara/SakaiPy/archive/2.2.0.tar.gz',
       packages=['SakaiPy', 'SakaiPy.SakaiTools'],
       classifiers=[
           'Development Status :: 5 - Production/Stable',
