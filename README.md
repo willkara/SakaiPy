@@ -23,6 +23,17 @@ I'll usually make a blog post about each new version at my website. https://blog
 
 ### Example
 
+````
+from SakaiPy import SakaiPy
+
+info = {'username': 'willkara',
+        'password': '8675309eeine',
+        'baseurl': 'https://sakai.rutgers.edu'}
+
+sak = SakaiPy.SakaiPy(info)
+
+print(sak.session.get_current_user_info())
+```
 
 ### Sakai Documentation
 
