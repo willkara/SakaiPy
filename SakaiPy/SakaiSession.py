@@ -62,7 +62,7 @@ class SakaiSession(Session):
             data['csrftoken'] = self.csrftoken
 
         if type is 'GET':
-            return self.get(self.api_url + url).json()
+            return self.get(self.api_url + url, params=params).json()
         elif type is 'POST':
             return self.post(self.api_url + url, data=data, params=params)
         else:

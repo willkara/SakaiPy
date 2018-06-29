@@ -49,6 +49,13 @@ class SakaiPy(object):
     def get_gradebook(self):
         pass
 
+    def get_membership(self):
+        """
+        Get a membersip object
+        :return:
+        """
+        return SakaiTools.Membership.Membership(self.session)
+
     def get_workspace(self):
         """
         Get a MyWorkspace object
